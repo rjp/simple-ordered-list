@@ -31,6 +31,16 @@ class Priority
         return @queue.pop.object
     end
 
+    def shift()
+        if @sorted == false then
+            tmp = @queue.sort_by {|i| i.priority}
+            @queue = tmp
+            @sorted = true
+        end
+
+        return @queue.pop.object
+    end
+
     def sorted?()
         return @sorted
     end
