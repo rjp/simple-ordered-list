@@ -1,9 +1,10 @@
 module Queue
 class Priority
     class Item
-        attr_accessor :me
+        attr_accessor :object, :priority
         def initialize(object, priority)
-            @me = [object, priority]
+            @object = object
+            @priority = priority
         end
     end
 
