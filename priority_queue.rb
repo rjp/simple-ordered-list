@@ -30,5 +30,9 @@ class Priority
 
         return @queue.pop.object
     end
+
+    def sorted?()
+        return @sorted
+    end
 end
 end
