@@ -19,5 +19,15 @@ class Priority
         @me.push i
         @sorted = false
     end
+
+    def pop()
+        if @sorted == false then
+            tmp = @queue.sort_by {|i| i[1]}
+            @queue = tmp
+            @sorted = true
+        end
+
+        return @queue.pop
+    end
 end
 end
