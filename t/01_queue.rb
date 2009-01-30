@@ -11,4 +11,11 @@ class Test_PQueue < Test::Unit::TestCase
         pq = Queue::Priority.new()
         pq.push('hello', 1)
     end
+
+    def test_push_pop
+        pq = Queue::Priority.new()
+        pq.push('hello', 1)
+        x = pq.pop()
+        assert_equal('hello', x, 'get back what we pushed')
+    end
 end
