@@ -23,12 +23,12 @@ class Priority
 
     def pop()
         if @sorted == false then
-            tmp = @queue.sort_by {|i| i[1]}
+            tmp = @queue.sort_by {|i| i.priority}
             @queue = tmp
             @sorted = true
         end
 
-        return @queue.pop
+        return @queue.pop.object
     end
 end
 end
