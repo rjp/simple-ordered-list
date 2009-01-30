@@ -17,7 +17,7 @@ class Priority
 
     def push(object, priority)
         i = Queue::Priority::Item.new(object, priority)
-        @me.push i
+        @queue.push i
         @sorted = false
     end
 
