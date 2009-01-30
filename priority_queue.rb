@@ -38,7 +38,7 @@ class Priority
             @sorted = true
         end
 
-        return @queue.pop.object
+        return @queue.shift.object
     end
 
     def sorted?()
