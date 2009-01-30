@@ -40,4 +40,20 @@ class Test_PQueue < Test::Unit::TestCase
         assert_equal('hello', x, 'p1 is last')
         assert_equal(true, pq.sorted?, 'pop sorts the queue')
     end
+
+    def test_priority_reverse_order
+        pq = Queue::Priority.new()
+        pq.push('hello', 1)
+        pq.push('goodbye', 3)
+        pq.push('lunchtime', 2)
+        assert_equal(false, pq.sorted?)
+        x = pq.shift()
+        assert_equal('hello', x, 'p1 is first')
+        assert_equal(true, pq.sorted?, 'shift sorts the queue')
+        x = pq.shift()
+        assert_equal('lunchtime', x, 'p2 is second')
+        x = pq.shift()
+        assert_equal('goodbye', x, 'p3 is last')
+        assert_equal(true, pq.sorted?, 'shift sorts the queue')
+    end
 end
