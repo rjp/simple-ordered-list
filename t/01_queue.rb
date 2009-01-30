@@ -25,4 +25,14 @@ class Test_PQueue < Test::Unit::TestCase
         assert_equal(false, pq.sorted?)
     end
 
+    def test_highest_priority
+        pq = Queue::Priority.new()
+        pq.push('hello', 1)
+        pq.push('goodbye', 3)
+        pq.push('lunchtime', 2)
+        assert_equal(false, pq.sorted?)
+        x = pq.pop()
+        assert_equal('goodbye', x, 'p3 is the highest')
+        assert_equal(true, pq.sorted?, 'pop sorts the queue')
+    end
 end
