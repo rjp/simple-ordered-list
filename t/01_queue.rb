@@ -56,4 +56,17 @@ class Test_PQueue < Test::Unit::TestCase
         assert_equal('goodbye', x, 'p3 is last')
         assert_equal(true, pq.sorted?, 'shift sorts the queue')
     end
+
+    def test_array
+        pq = Queue::Priority.new()
+        pq.push(['redmire','pool'], 1)
+        pq.push(['stour','river'], 8)
+        pq.push(['thames','river'], 2)
+        x = pq.shift()
+        assert_equal(['redmire','pool'], x, 'redmire pool')
+        x = pq.pop()
+        assert_equal(['stour','river'], x, 'river stour')
+        x = pq.pop()
+        assert_equal(['thames','river'], x, 'river thames')
+    end
 end
