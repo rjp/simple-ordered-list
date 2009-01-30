@@ -18,4 +18,11 @@ class Test_PQueue < Test::Unit::TestCase
         x = pq.pop()
         assert_equal('hello', x, 'get back what we pushed')
     end
+
+    def test_sorted
+        pq = Queue::Priority.new()
+        pq.push('hello', 1)
+        assert_equal(false, pq.sorted?)
+    end
+
 end
