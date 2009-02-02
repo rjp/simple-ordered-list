@@ -1,7 +1,7 @@
 require 'rake'
 
 spec = Gem::Specification.new do |s| 
-  s.name = "Simple Ordered List"
+  s.name = "simple-ordered-list"
   s.version = "0.0.1"
   s.author = "Rob Partington"
   s.email = "zimpenfish@gmail.com"
