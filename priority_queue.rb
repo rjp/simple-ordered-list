@@ -21,7 +21,7 @@ class Priority
         @sorted = false
     end
 
-    def pop()
+    def highest()
         if @sorted == false then
             tmp = @queue.sort_by {|i| i.priority}
             @queue = tmp
@@ -31,7 +31,7 @@ class Priority
         return @queue.pop.object
     end
 
-    def shift()
+    def lowest()
         if @sorted == false then
             tmp = @queue.sort_by {|i| i.priority}
             @queue = tmp

@@ -28,7 +28,7 @@ class Test_PQueue < Test::Unit::TestCase
     def test_push_pop
         pq = Queue::Priority.new()
         pq.push('hello', 1)
-        x = pq.pop()
+        x = pq.highest()
         assert_equal('hello', x, 'get back what we pushed')
     end
 
@@ -38,26 +38,26 @@ class Test_PQueue < Test::Unit::TestCase
 
     def test_priority_order
         assert_equal(false, @tq.sorted?)
-        x = @tq.pop()
+        x = @tq.highest()
         assert_equal('goodbye', x, 'p3 is the highest')
         assert_equal(true, @tq.sorted?, 'pop sorts the queue')
-        x = @tq.pop()
+        x = @tq.highest()
         assert_equal('lunchtime', x, 'p2 is second')
-        x = @tq.pop()
+        x = @tq.highest()
         assert_equal('hello', x, 'p1 is last')
         assert_equal(true, @tq.sorted?, 'pop sorts the queue')
     end
 
     def test_priority_reverse_order
         assert_equal(false, @tq.sorted?)
-        x = @tq.shift()
+        x = @tq.lowest()
         assert_equal('hello', x, 'p1 is first')
-        assert_equal(true, @tq.sorted?, 'shift sorts the queue')
-        x = @tq.shift()
+        assert_equal(true, @tq.sorted?, 'lowest sorts the queue')
+        x = @tq.lowest()
         assert_equal('lunchtime', x, 'p2 is second')
-        x = @tq.shift()
+        x = @tq.lowest()
         assert_equal('goodbye', x, 'p3 is last')
-        assert_equal(true, @tq.sorted?, 'shift sorts the queue')
+        assert_equal(true, @tq.sorted?, 'lowest sorts the queue')
     end
 
     def test_array
@@ -65,11 +65,11 @@ class Test_PQueue < Test::Unit::TestCase
         pq.push(['redmire','pool'], 1)
         pq.push(['stour','river'], 8)
         pq.push(['thames','river'], 2)
-        x = pq.shift()
+        x = pq.lowest()
         assert_equal(['redmire','pool'], x, 'redmire pool')
-        x = pq.pop()
+        x = pq.highest()
         assert_equal(['stour','river'], x, 'river stour')
-        x = pq.pop()
+        x = pq.highest()
         assert_equal(['thames','river'], x, 'river thames')
     end
 end
