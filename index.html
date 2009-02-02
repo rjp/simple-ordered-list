@@ -1,19 +1,25 @@
 ---
 layout: default
-title: irc_muc
+title: Simple Ordered List
 ---
 <div id="content">
-<h1>irc_muc</h1>
-<p>
-<tt>
-irc_muc - gateway between IRC and XMPP MUC</tt>
+<h1>Simple Ordered List</h1>
+<h2>trivial ordered list to act as a priority queue</h2>
 
-<p>
-Pretends to be an IRC server so you can use your favourite IRC client or bot
-in XMPP MUC conferences without rewriting the messaging backend.
-</p>
-<p>
-The only change necessary is to authenticate against the IRC server with your
-XMPP credentials.
-</p>
+<code>
+    require 'rubygems'
+    require 'simple-ordered-list'
+
+    pq = Queue::Priority.new()
+
+    # push some objects onto our queue
+    pq.push(object, priority)
+
+    # get the highest priority object
+    next = pq.highest()
+
+    # or get the lowest
+    next = pq.lowest()
+</code>
+
 </div>
