@@ -31,14 +31,18 @@ class Priority
         return @queue.pop.object
     end
 
-    def lowest()
+    def lowest(withpri=false)
         if @sorted == false then
             tmp = @queue.sort_by {|i| i.priority}
             @queue = tmp
             @sorted = true
         end
 
-        return @queue.shift.object
+        x = @queue.shift
+        if withpri then
+            return x.object, x.priority
+        end
+        return x.object
     end
 
     def sorted?()
