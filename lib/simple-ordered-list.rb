@@ -1,4 +1,4 @@
-module Queue
+class Queue
 class Priority
     class Item
         attr_accessor :object, :priority
